@@ -10,8 +10,8 @@
 
   <body>
     <section class="top-menu">
-      <div class="high-score-btn">View high scores</div>
-      <div class="timer">Time: 0</div>
+      <b class="high-score-btn">View high scores</b>
+      <b class="timer">Time: 0</b>
     </section>
 
     <main>
@@ -20,8 +20,9 @@
         <h1>Coding Quiz Challenge</h1>
         <p>
           Try to answer the following code-related questions within the time
-          limit. Keep in mind that incorrect answers will penaliza your
-          score/time by ten seconds
+          limit. <br />
+          Keep in mind that incorrect answers will penalize your score/time by
+          ten seconds.
         </p>
         <div class="start-btn">Start Quiz</div>
       </section>
@@ -29,12 +30,12 @@
       <!-- Question 1 -->
       <section class="question" id="question-1">
         <h1>Commonly used data types DO Not Include:</h1>
-        <ol>
-          <li>strings</li>
-          <li>booleans</li>
-          <li>alerts</li>
-          <li>numbers</li>
-        </ol>
+        <div class="options">
+          <div>1. strings</div>
+          <div>2. bouleans</div>
+          <div>3. alerts</div>
+          <div>4. numbers</div>
+        </div>
       </section>
 
       <!-- Question 2 -->
@@ -42,23 +43,25 @@
         <h1>
           The condition in an if / else statement is enclosed with ________.
         </h1>
-        <ol>
-          <li>quotes</li>
-          <li>curly brackets</li>
-          <li>parenthesis</li>
-          <li>square brackets</li>
-        </ol>
+        <div class="options">
+          <div>1. quotes</div>
+          <div>2. curly brackets</div>
+          <div>3. parenthesis</div>
+          <div>4. square brackets</div>
+        </div>
+        <div class="right-wrong">Wrong!</div>
       </section>
 
       <!-- Question 3 -->
       <section class="question" id="question-3">
         <h1>Arrays in JavaScript can be used to store ________.</h1>
-        <ol>
-          <li>numbers and strings</li>
-          <li>other arrays</li>
-          <li>booleans</li>
-          <li>all of the above</li>
-        </ol>
+        <div class="options">
+          <div>1. numbers and strings</div>
+          <div>2. other arrays</div>
+          <div>3. booleans</div>
+          <div>4. all of the above</div>
+        </div>
+        <div class="right-wrong">Wrong!</div>
       </section>
 
       <!-- Question 4 -->
@@ -67,52 +70,53 @@
           String values must be enclosed within ________ when being assigned to
           variables.
         </h1>
-        <ol>
-          <li>commas</li>
-          <li>curly brackets</li>
-          <li>quotes</li>
-          <li>parenthesis</li>
-        </ol>
+        <div class="options">
+          <div>1. commas</div>
+          <div>2. curly brackets</div>
+          <div>3. quotes</div>
+          <div>4. parenthesis</div>
+        </div>
+        <div class="right-wrong">Wrong!</div>
       </section>
 
       <!-- Question 5 -->
       <section class="question" id="question-5">
         <h1>
-          A very useful tool used during development and debugging for printing
+          A very useful toul used during development and debugging for printing
           content to the debugger is:
         </h1>
-        <ol>
-          <li>JavaScript</li>
-          <li>terminal/bash</li>
-          <li>for loops</li>
-          <li>console.log</li>
-        </ol>
+        <div class="options">
+          <div>1. JavaScript</div>
+          <div>2. terminal/bash</div>
+          <div>3. for loops</div>
+          <div>4. consule.log</div>
+        </div>
+        <div class="right-wrong">Wrong!</div>
       </section>
 
       <!-- Score Scene -->
       <section class="score">
         <h1>All done!</h1>
-        <p>Your final score is 0.</p>
+        <p id="score">Your final score is 0.</p>
         <div class="submit">
-          <p>Enter initials:<input type="text" name="initials/></p>
+          <p>Enter initials:<input type="text" name="initials" /></p>
           <div class="submit-btn">Submit</div>
         </div>
+        <div class="right-wrong">Wrong!</div>
       </section>
 
-      <div class="right/wrong">Wrong!</div>
+      <!-- Recorded High Scores-->
+      <section class="high-score">
+        <h1>High scores</h1>
+        <!-- List of High Scores-->
+        <div class="score-list"></div>
+        <!-- High Score Menu Options-->
+        <div class="high-score-op">
+          <div class="go-back">Go back</div>
+          <div class="clear-scores">Clear high scores</div>
+        </div>
+      </section>
     </main>
-
-    <!-- Recorded High Scores-->
-    <section class="high-score">
-      <h1>High scores</h1>
-      <!-- List of High Scores-->
-      <ol class="score-list"></ol>
-      <!-- High Score Menu Options-->
-      <div class="high-score-op">
-        <div class="go-back">Go back</div>
-        <div class="clear-scores">Clear high scores</div>
-      </div>
-    </section>
 
     <script src="./assets/js/script.js"></script>
   </body>
