@@ -9,14 +9,14 @@
   </head>
 
   <body>
-    <section class="top-menu">
-      <b class="high-score-btn">View high scores</b>
-      <b class="timer">Time: 0</b>
+    <section id="top-menu">
+      <b id="high-score-btn">View high scores</b>
+      <b id="timer">Time: 0</b>
     </section>
 
     <main>
       <!-- Starting Section -->
-      <section class="quiz-start">
+      <section id="quiz-start">
         <h1>Coding Quiz Challenge</h1>
         <p>
           Try to answer the following code-related questions within the time
@@ -24,17 +24,17 @@
           Keep in mind that incorrect answers will penalize your score/time by
           ten seconds.
         </p>
-        <div class="start-btn">Start Quiz</div>
+        <div id="start-btn">Start Quiz</div>
       </section>
 
       <!-- Question 1 -->
       <section class="question" id="question-1">
         <h1>Commonly used data types DO Not Include:</h1>
         <div class="options">
-          <div>1. strings</div>
-          <div>2. bouleans</div>
-          <div>3. alerts</div>
-          <div>4. numbers</div>
+          <div class="q1-op">1. strings</div>
+          <div class="q1-op">2. booleans</div>
+          <div class="q1-op">3. alerts</div>
+          <div class="q1-op">4. numbers</div>
         </div>
       </section>
 
@@ -44,10 +44,10 @@
           The condition in an if / else statement is enclosed with ________.
         </h1>
         <div class="options">
-          <div>1. quotes</div>
-          <div>2. curly brackets</div>
-          <div>3. parenthesis</div>
-          <div>4. square brackets</div>
+          <div class="q2-op">1. quotes</div>
+          <div class="q2-op">2. curly brackets</div>
+          <div class="q2-op">3. parenthesis</div>
+          <div class="q2-op">4. square brackets</div>
         </div>
         <div class="right-wrong">Wrong!</div>
       </section>
@@ -56,10 +56,10 @@
       <section class="question" id="question-3">
         <h1>Arrays in JavaScript can be used to store ________.</h1>
         <div class="options">
-          <div>1. numbers and strings</div>
-          <div>2. other arrays</div>
-          <div>3. booleans</div>
-          <div>4. all of the above</div>
+          <div class="q3-op">1. numbers and strings</div>
+          <div class="q3-op">2. other arrays</div>
+          <div class="q3-op">3. booleans</div>
+          <div class="q3-op">4. all of the above</div>
         </div>
         <div class="right-wrong">Wrong!</div>
       </section>
@@ -71,10 +71,10 @@
           variables.
         </h1>
         <div class="options">
-          <div>1. commas</div>
-          <div>2. curly brackets</div>
-          <div>3. quotes</div>
-          <div>4. parenthesis</div>
+          <div class="q4-op">1. commas</div>
+          <div class="q4-op">2. curly brackets</div>
+          <div class="q4-op">3. quotes</div>
+          <div class="q4-op">4. parenthesis</div>
         </div>
         <div class="right-wrong">Wrong!</div>
       </section>
@@ -82,25 +82,27 @@
       <!-- Question 5 -->
       <section class="question" id="question-5">
         <h1>
-          A very useful toul used during development and debugging for printing
+          A very useful tool used during development and debugging for printing
           content to the debugger is:
         </h1>
         <div class="options">
-          <div>1. JavaScript</div>
-          <div>2. terminal/bash</div>
-          <div>3. for loops</div>
-          <div>4. consule.log</div>
+          <div class="q5-op">1. JavaScript</div>
+          <div class="q5-op">2. terminal/bash</div>
+          <div class="q5-op">3. for loops</div>
+          <div class="q5-op">4. console.log</div>
         </div>
         <div class="right-wrong">Wrong!</div>
       </section>
 
       <!-- Score Scene -->
-      <section class="score">
+      <section id="score">
         <h1>All done!</h1>
         <p id="score">Your final score is 0.</p>
         <div class="submit">
-          <p>Enter initials:<input type="text" name="initials" /></p>
-          <div class="submit-btn">Submit</div>
+          <p>
+            Enter initials:<input type="text" name="initials" id="initials" />
+          </p>
+          <div id="submit-btn">Submit</div>
         </div>
         <div class="right-wrong">Wrong!</div>
       </section>
@@ -112,8 +114,8 @@
         <div class="score-list"></div>
         <!-- High Score Menu Options-->
         <div class="high-score-op">
-          <div class="go-back">Go back</div>
-          <div class="clear-scores">Clear high scores</div>
+          <div id="go-back">Go back</div>
+          <div id="clear-scores">Clear high scores</div>
         </div>
       </section>
     </main>
