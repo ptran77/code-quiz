@@ -13,6 +13,7 @@ let q5 = document.getElementById("question-5");
 let rightWrong = document.getElementsByClassName("right-wrong");
 let scorePage = document.getElementById("score");
 let sumbitBtn = document.getElementById("submit-btn");
+let highScoresPage = document.getElementById("high-score");
 
 // container containing all the options of a specifc question
 let q1Options = document.querySelector(".q1-options");
@@ -108,10 +109,17 @@ let answerQ5 = function(option) {
 // View Score Function
 let viewScore = function () {
   topMenu.style.display = "none";
-  if(curQuestion == 0) {
-    
-  }
+  quizStart.style.display = "none";
+  q1.style.display = "none";
+  q2.style.display = "none";
+  q3.style.display = "none";
+  q4.style.display = "none";
+  q5.style.display = "none";
+  scorePage.style.display = "none";
+  highScoresPage.style.display = "block";
 }
+
+// Event Listeners
 
 // Pressing the start quiz calls startQuiz function
 startBtn.addEventListener('click',startQuiz);
@@ -178,3 +186,6 @@ sumbitBtn.addEventListener("mouseover", function() {
 sumbitBtn.addEventListener("mouseout", function() {
   rightWrong[4].style.display = "block";
 })
+
+// event listener to see the high scores list
+viewScoreBtn.addEventListener("click", viewScore);

@@ -131,7 +131,7 @@ h1 {
 /* Right/Wrong Style End */
 
 /* Score List Style Start */
-.high-score {
+#high-score {
   position: relative;
   width: 80%;
   margin: auto;
