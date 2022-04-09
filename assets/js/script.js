@@ -1,19 +1,34 @@
 let timeleft = 75;
+
+// keeps track of which page we are on 
+// 0 for start page, 1 for question 1, 2 for question 2, 3 for question 3, 4 for question 4, 5 for question 5, and 6 for score page
 let curQuestion = 0;
+
 let topMenu = document.getElementById("top-menu");
 let viewScoreBtn = document.getElementById("high-score-btn");
 let timer = document.getElementById("timer");
+
+// Start Page and its elements
 let quizStart = document.getElementById("quiz-start");
 let startBtn = document.getElementById("start-btn");
+
+// Question Pages
 let q1 = document.getElementById("question-1");
 let q2 = document.getElementById("question-2");
 let q3 = document.getElementById("question-3");
 let q4 = document.getElementById("question-4");
 let q5 = document.getElementById("question-5");
+
 let rightWrong = document.getElementsByClassName("right-wrong");
+
+// Score Page and its Element
 let scorePage = document.getElementById("score");
 let sumbitBtn = document.getElementById("submit-btn");
+
+// High score page and its elements
 let highScoresPage = document.getElementById("high-score");
+let goBackBtn = document.getElementById("go-back");
+let clearScoresBtn = document.getElementById("clear-scores");
 
 // container containing all the options of a specifc question
 let q1Options = document.querySelector(".q1-options");
@@ -119,6 +134,32 @@ let viewScore = function () {
   highScoresPage.style.display = "block";
 }
 
+// Go Back Function
+let goBack = function () {
+  highScoresPage.style.display = "none";
+  topMenu.style.display = "flex";
+  if(curQuestion == 0) {
+    quizStart.style.display = "block";
+  }
+  else if(curQuestion == 1) {
+    q1.style.display = "block";
+  }
+  else if(curQuestion == 2) {
+    q2.style.display = "block";
+  }
+  else if(curQuestion == 3) {
+    q3.style.display = "block";
+  }
+  else if(curQuestion == 4) {
+    q4.style.display = "block";
+  }
+  else if(curQuestion == 5) {
+    q5.style.display = "block";
+  }
+  else
+    scorePage.style.display = "block";
+}
+
 // Event Listeners
 
 // Pressing the start quiz calls startQuiz function
@@ -189,3 +230,6 @@ sumbitBtn.addEventListener("mouseout", function() {
 
 // event listener to see the high scores list
 viewScoreBtn.addEventListener("click", viewScore);
+
+// event listener to go from the high scores back to the previous page
+goBackBtn.addEventListener("click", goBack);
