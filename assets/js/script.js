@@ -24,6 +24,7 @@ let rightWrong = document.getElementsByClassName("right-wrong");
 
 // Score Page and its Element
 let scorePage = document.getElementById("score");
+let yourScore = document.getElementById("your-score");
 let sumbitBtn = document.getElementById("submit-btn");
 
 // High score page and its elements
@@ -64,6 +65,13 @@ let startQuiz = function  () {
   q1.style.display = "block";
 }
 
+// Wrong Answer function
+
+let wrongAnswer = function() {
+  if(timeLeft < 10) timeLeft = 0;
+  else timeLeft -= 10;
+  timer.textContent = "Time: " + timeLeft;
+}
 
 // function to check the answer to question 1 and move to question 2
 let answerQ1 = function (option) {
@@ -72,6 +80,7 @@ let answerQ1 = function (option) {
   }
   else {
     rightWrong[0].textContent = "Wrong!";
+    wrongAnswer();
   }
   q1.style.display = "none";
   q2.style.display = "block";
@@ -85,6 +94,7 @@ let answerQ2 = function(option) {
   }
   else {
     rightWrong[1].textContent = "Wrong!";
+    wrongAnswer();
   }
   q2.style.display = "none";
   q3.style.display = "block";
@@ -98,6 +108,7 @@ let answerQ3 = function(option) {
   }
   else {
     rightWrong[2].textContent = "Wrong!";
+    wrongAnswer();
   }
   q3.style.display = "none";
   q4.style.display = "block";
@@ -111,6 +122,7 @@ let answerQ4 = function(option) {
   }
   else {
     rightWrong[3].textContent = "Wrong!";
+    wrongAnswer();
   }
   q4.style.display = "none";
   q5.style.display = "block";
@@ -124,10 +136,14 @@ let answerQ5 = function(option) {
   }
   else {
     rightWrong[4].textContent = "Wrong!";
+    wrongAnswer();
   }
   q5.style.display = "none";
   scorePage.style.display = "block";
   curQuestion = 6;
+  // stop the timer if there is still time left
+  if(timeLeft > 0) clearInterval(timeInterval);
+  yourScore.textContent = "Your final score is " + timeLeft;
 }
 
 // View Score Function

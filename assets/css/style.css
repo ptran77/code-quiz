@@ -96,7 +96,7 @@ h1 {
   display: none;
 }
 
-#score, .submit, input {
+#your-score, .submit, input {
   font-size: 30px;
 }
 
