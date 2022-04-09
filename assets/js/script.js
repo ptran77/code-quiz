@@ -12,12 +12,21 @@ let q4 = document.getElementById("question-4");
 let q5 = document.getElementById("question-5");
 let rightWrong = document.getElementsByClassName("right-wrong");
 let scorePage = document.getElementById("score");
+let sumbitBtn = document.getElementById("submit-btn");
 
-let q1Options = document.getElementsByClassName("q1-op");
-let q2Options = document.getElementsByClassName("q2-op");
-let q3Options = document.getElementsByClassName("q3-op");
-let q4Options = document.getElementsByClassName("q4-op");
-let q5Options = document.getElementsByClassName("q5-op");
+// container containing all the options of a specifc question
+let q1Options = document.querySelector(".q1-options");
+let q2Options = document.querySelector(".q2-options");
+let q3Options = document.querySelector(".q3-options");
+let q4Options = document.querySelector(".q4-options");
+let q5Options = document.querySelector(".q5-options");
+
+// arrays that contains the option divs
+let q1Option = document.getElementsByClassName("q1-option");
+let q2Option = document.getElementsByClassName("q2-option");
+let q3Option = document.getElementsByClassName("q3-option");
+let q4Option = document.getElementsByClassName("q4-option");
+let q5Option = document.getElementsByClassName("q5-option");
 
 const answerKey = {"q1":"3. alerts", "q2":"3. parenthesis","q3":"4. all of the above","q4":"3. quotes","q5":"4. console.log"};
 
@@ -107,48 +116,65 @@ let viewScore = function () {
 // Pressing the start quiz calls startQuiz function
 startBtn.addEventListener('click',startQuiz);
 
-// Event Listen for Question Options
+// event listeners for question options
+q1Options.addEventListener("click", function(event) {
+  let option = event.target;
+  answerQ1(option);
+})
+
+q2Options.addEventListener("click", function(event) {
+  let option = event.target;
+  answerQ2(option);
+})
+
+q3Options.addEventListener("click", function(event) {
+  let option = event.target;
+  answerQ3(option);
+})
+
+q4Options.addEventListener("click", function(event) {
+  let option = event.target;
+  answerQ4(option);
+})
+
+q5Options.addEventListener("click", function(event) {
+  let option = event.target;
+  answerQ5(option);
+})
+
+// event listeners for when mouse is over an option, the right/wrong message will disappear
+// and when mouse is not over an option, the right/wrong message is still there
 for(let i = 0; i < 4; i++) {
-  q1Options[i].addEventListener('click',function() {
-    answerQ1(q1Options[i])}
-  );
-
-  q2Options[i].addEventListener('click',function() {
-    answerQ2(q2Options[i])
-  });
-  q2Options[i].addEventListener('mouseover',function() {
-    rightWrong[0].style.display="none";
-  });
-  q2Options[i].addEventListener('mouseout',function() {
-    rightWrong[0].style.display="block";
-  });
-
-  q3Options[i].addEventListener('click',function() {
-    answerQ3(q3Options[i])
-  });
-  q3Options[i].addEventListener('mouseover',function() {
-    rightWrong[1].style.display="none";
-  });
-  q3Options[i].addEventListener('mouseout',function() {
-    rightWrong[1].style.display="block";
-  });
-
-  q4Options[i].addEventListener('click',function() {
-    answerQ4(q4Options[i])
-  });
-  q4Options[i].addEventListener('mouseover',function() {
-    rightWrong[2].style.display="none";
-  });
-  q4Options[i].addEventListener('mouseout',function() {
-    rightWrong[2].style.display="block";
-  });
-
-  q5Options[i].addEventListener('click',function() {
-    answerQ5(q5Options[i])
-  });
-  q5Options[i].addEventListener('mouseover',function() {
-    rightWrong[3].style.display="none";
-  });q5Options[i].addEventListener('mouseout',function() {
-    rightWrong[3].style.display="block";
-  });
+  q2Option[i].addEventListener("mouseover", function() {
+    rightWrong[0].style.display = "none";
+  })
+  q2Option[i].addEventListener("mouseout", function() {
+    rightWrong[0].style.display = "block";
+  })
+  q3Option[i].addEventListener("mouseover", function() {
+    rightWrong[1].style.display = "none";
+  })
+  q3Option[i].addEventListener("mouseout", function() {
+    rightWrong[1].style.display = "block";
+  })
+  q4Option[i].addEventListener("mouseover", function() {
+    rightWrong[2].style.display = "none";
+  })
+  q4Option[i].addEventListener("mouseout", function() {
+    rightWrong[2].style.display = "block";
+  })
+  q5Option[i].addEventListener("mouseover", function() {
+    rightWrong[3].style.display = "none";
+  })
+  q5Option[i].addEventListener("mouseout", function() {
+    rightWrong[3].style.display = "block";
+  })
 }
+
+sumbitBtn.addEventListener("mouseover", function() {
+  rightWrong[4].style.display = "none";
+})
+
+sumbitBtn.addEventListener("mouseout", function() {
+  rightWrong[4].style.display = "block";
+})
