@@ -1,4 +1,5 @@
-let timeleft = 75;
+let timeLeft = 75; //time left in seconds
+let timeInterval; // a timer to run in the background
 
 // keeps track of which page we are on 
 // 0 for start page, 1 for question 1, 2 for question 2, 3 for question 3, 4 for question 4, 5 for question 5, and 6 for score page
@@ -49,7 +50,15 @@ const answerKey = {"q1":"3. alerts", "q2":"3. parenthesis","q3":"4. all of the a
 
 // function for starting the quiz
 let startQuiz = function  () {
-  timeleft = 75;
+  timeLeft = 75;
+
+  timeInterval = setInterval(function(){
+    timer.textContent = "Time: " + timeLeft;
+    if(timeLeft == 0)
+      clearInterval(timeInterval);
+    timeLeft--;
+  }, 1000);
+  
   curQuestion = 1;
   quizStart.style.display = "none";
   q1.style.display = "block";
