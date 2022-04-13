@@ -1,5 +1,6 @@
-let timeLeft = 75; //time left in seconds
+let timeLeft = 0; //time left in seconds
 let timeInterval; // a timer to run in the background
+let quizRun = false; // indicator that for currently in the quiz
 
 // keeps track of which page we are on 
 // 0 for start page, 1 for question 1, 2 for question 2, 3 for question 3, 4 for question 4, 5 for question 5, and 6 for score page
@@ -52,11 +53,21 @@ const answerKey = {"q1":"3. alerts", "q2":"3. parenthesis","q3":"4. all of the a
 // function for starting the quiz
 let startQuiz = function  () {
   timeLeft = 75;
-
+  quizRun = true;
   timeInterval = setInterval(function(){
     timer.textContent = "Time: " + timeLeft;
-    if(timeLeft == 0)
+    if(timeLeft == 0) {
       clearInterval(timeInterval);
+      quizRun = false;
+      q1.style.display = "none";
+      q2.style.display = "none";
+      q3.style.display = "none";
+      q4.style.display = "none";
+      q5.style.display = "none";
+      rightWrong[4].textContent = "";
+      scorePage.style.display = "block";
+      curQuestion = 6;
+    }
     timeLeft--;
   }, 1000);
   
@@ -142,12 +153,19 @@ let answerQ5 = function(option) {
   scorePage.style.display = "block";
   curQuestion = 6;
   // stop the timer if there is still time left
-  if(timeLeft > 0) clearInterval(timeInterval);
+  if(timeLeft > 0) {
+    clearInterval(timeInterval);
+    quizRun = false;
+  }
   yourScore.textContent = "Your final score is " + timeLeft;
 }
 
 // View Score Function
 let viewScore = function () {
+  // pause timer if the quiz is running
+  if(quizRun) {
+    clearInterval(timeInterval);
+  }
   topMenu.style.display = "none";
   quizStart.style.display = "none";
   q1.style.display = "none";
@@ -183,6 +201,26 @@ let goBack = function () {
   }
   else
     scorePage.style.display = "block";
+
+  // in the middle of the quiz, resume timer
+  if(quizRun) {
+    timeInterval = setInterval(function(){
+      timer.textContent = "Time: " + timeLeft;
+      if(timeLeft == 0) {
+        clearInterval(timeInterval);
+        quizRun = false;
+        q1.style.display = "none";
+        q2.style.display = "none";
+        q3.style.display = "none";
+        q4.style.display = "none";
+        q5.style.display = "none";
+        rightWrong[4].textContent = "";
+        scorePage.style.display = "block";
+        curQuestion = 6;
+      }
+      timeLeft--;
+    }, 1000);
+  }
 }
 
 // Event Listeners
