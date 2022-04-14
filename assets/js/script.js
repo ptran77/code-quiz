@@ -1,6 +1,7 @@
 let timeLeft = 0; //time left in seconds
 let timeInterval; // a timer to run in the background
 let quizRun = false; // indicator that for currently in the quiz
+let scores = []; // list of scores
 
 // keeps track of which page we are on 
 // 0 for start page, 1 for question 1, 2 for question 2, 3 for question 3, 4 for question 4, 5 for question 5, and 6 for score page
@@ -26,7 +27,8 @@ let rightWrong = document.getElementsByClassName("right-wrong");
 // Score Page and its Element
 let scorePage = document.getElementById("score");
 let yourScore = document.getElementById("your-score");
-let sumbitBtn = document.getElementById("submit-btn");
+let submitBtn = document.getElementById("submit-btn");
+let scoreList = document.getElementById("score-list");
 
 // High score page and its elements
 let highScoresPage = document.getElementById("high-score");
@@ -223,6 +225,60 @@ let goBack = function () {
   }
 }
 
+
+// Submit Score function
+let submitScore = function() {
+  let initials = document.getElementById("initials");
+  if(initials.value.length != 2) {
+    window.alert("Expected initials. Try Again");
+  }
+  else {
+    let scoreDataObj = {name: initials.value, score: timeLeft};
+    scores.push(scoreDataObj);
+    sortScores();
+    addScoresToList();
+    timer.textContent = "Time: 0";
+    topMenu.style.display = "none";
+    scorePage.style.display = "none";
+    highScoresPage.style.display = "block";
+    curQuestion = 0;
+  }
+  initials.value = "";
+}
+
+// Function to sort scores from greatest to least
+let sortScores = function () {
+  if(scores == []) return
+  if(scores.length > 1) {
+    for(let i = 0; i < scores.length; i++) {
+      let highest = i;
+      for(let j = i+1; j < scores.length; j++){
+        if(scores[highest].score < scores[j].score) {
+          highest = j;
+        }
+      }
+      let highestScorer = scores[highest];
+      scores[highest] = scores[i];
+      scores[i] = highestScorer;
+    }
+  }
+  localStorage.setItem("scores", JSON.stringify(scores));
+}
+
+// Adding scores to scorelist
+let addScoresToList = function() {
+  scoreList.textContent = "";
+  if(scores == []) return
+  else {
+    for(let i = 0; i < scores.length; i++) {
+      let scoreListItem = document.createElement('div');
+      scoreListItem.classList.add("score-list-item");
+      scoreListItem.textContent = i+1 + ". " + scores[i].name + " - " + scores[i].score;
+      scoreList.appendChild(scoreListItem);
+    }
+  }
+}
+
 // Event Listeners
 
 // Pressing the start quiz calls startQuiz function
@@ -283,11 +339,11 @@ for(let i = 0; i < 4; i++) {
   })
 }
 
-sumbitBtn.addEventListener("mouseover", function() {
+submitBtn.addEventListener("mouseover", function() {
   rightWrong[4].style.display = "none";
 })
 
-sumbitBtn.addEventListener("mouseout", function() {
+submitBtn.addEventListener("mouseout", function() {
   rightWrong[4].style.display = "block";
 })
 
@@ -296,3 +352,10 @@ viewScoreBtn.addEventListener("click", viewScore);
 
 // event listener to go from the high scores back to the previous page
 goBackBtn.addEventListener("click", goBack);
+
+submitBtn.addEventListener("click",submitScore);
+
+window.onload = function() {
+  scores = JSON.parse(localStorage.getItem("scores"));
+  addScoresToList();
+}

@@ -142,6 +142,7 @@ h1 {
   background-color: var(--lavender);
   font-size: 30px;
   padding: 10px;
+  margin-bottom: 5px;
 }
 
 .high-score-op {
