@@ -167,3 +167,58 @@ h1 {
   background-color: var(--secondary);
 }
 /* Score List Style End */
+
+/* MEDIA QUERY FOR SMALLER DESKTOP SCREENS AND SMALLER */
+@media screen and (max-width: 1400px) {
+  main {
+    padding: 100px 100px 0 100px;
+  }
+}
+
+@media screen and (max-width: 980px) {
+  h1, .right-wrong{
+    font-size: 32px;
+  }
+
+  #quiz-start p, #start-btn, .options div, #your-score, .submit, input, .high-score-op div, .score-list-item{
+    font-size: 25px;
+  }
+
+  #submit-btn {
+    font-size: 15px;
+  }
+}
+
+@media screen and (max-width: 790px) {
+  main {
+    padding: 25px;
+  }
+}
+
+@media screen and (max-width: 635px) {
+  main {
+    padding: 25px 5px 0px 5px;
+  }
+  
+  #top-menu {
+    font-size: 15px;
+    padding-right: 5px;
+    padding-left: 5px;
+  }
+
+  h1, .right-wrong{
+    font-size: 20px;
+  }
+
+  #quiz-start p, #start-btn, .options div, #your-score, .submit, input, .score-list-item{
+    font-size: 18px;
+  }
+
+  .high-score-op div {
+    font-size: 15px;
+  }
+
+  #start-btn, .options div, .high-score-op div{
+    padding: 10px;
+  }
+}
