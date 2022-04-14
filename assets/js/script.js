@@ -225,6 +225,12 @@ let goBack = function () {
   }
 }
 
+// clear scores function
+let clearScores = function() {
+  scoreList.textContent = "";
+  scores = [];
+  localStorage.setItem("scores", JSON.stringify(scores));
+}
 
 // Submit Score function
 let submitScore = function() {
@@ -354,6 +360,8 @@ viewScoreBtn.addEventListener("click", viewScore);
 goBackBtn.addEventListener("click", goBack);
 
 submitBtn.addEventListener("click",submitScore);
+
+clearScoresBtn.addEventListener("click", clearScores);
 
 window.onload = function() {
   scores = JSON.parse(localStorage.getItem("scores"));
