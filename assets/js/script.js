@@ -132,7 +132,10 @@ let sortScores = function () {
 // Adding scores to scorelist
 let addScoresToList = function() {
   scoreList.textContent = "";
-  if(scores == []) return
+  if(!scores || scores == []) {
+    scores = [];
+    return;
+  }
   else {
     for(let i = 0; i < scores.length; i++) {
       let scoreListItem = document.createElement('div');
