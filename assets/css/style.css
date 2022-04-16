@@ -40,12 +40,12 @@ h1 {
 }
 
 /* Starting Section Style Begin */
-#quiz-start {
+#start-page {
   text-align: center;
   display: block;
 }
 
-#quiz-start p {
+#start-page p {
   font-size: 30px;
   padding: 0 50px 25px 50px;
 }
@@ -66,7 +66,7 @@ h1 {
 /* Starting Section Style End */
 
 /* Question Style Begin */
-.question {
+#question-page {
   display: none;
   width: fit-content;
   margin: auto;
@@ -180,7 +180,7 @@ h1 {
     font-size: 32px;
   }
 
-  #quiz-start p, #start-btn, .options div, #your-score, .submit, input, .high-score-op div, .score-list-item{
+  #start-page p, #start-btn, .options div, #your-score, .submit, input, .high-score-op div, .score-list-item{
     font-size: 25px;
   }
 
@@ -210,7 +210,7 @@ h1 {
     font-size: 20px;
   }
 
-  #quiz-start p, #start-btn, .options div, #your-score, .submit, input, .score-list-item{
+  #start-page p, #start-btn, .options div, #your-score, .submit, input, .score-list-item{
     font-size: 18px;
   }
 
