@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Code Quiz</title>
+    <link rel="stylesheet" href="./assets/css/style.css" />
+  </head>
+
+  <body>
+    <section id="top-menu">
+      <b id="high-score-btn">View high scores</b>
+      <b id="timer">Time: 0</b>
+    </section>
+
+    <main>
+      <!-- Starting Section -->
+      <section id="quiz-start">
+        <h1>Coding Quiz Challenge</h1>
+        <p>
+          Try to answer the following code-related questions within the time
+          limit. <br />
+          Keep in mind that incorrect answers will penalize your score/time by
+          ten seconds.
+        </p>
+        <div id="start-btn">Start Quiz</div>
+      </section>
+
+      <!-- Question 1 -->
+      <section class="question" id="question-1">
+        <h1>Commonly used data types DO Not Include:</h1>
+        <div class="options q1-options">
+          <div class="q1-option">1. strings</div>
+          <div class="q1-option">2. booleans</div>
+          <div class="q1-option">3. alerts</div>
+          <div class="q1-option">4. numbers</div>
+        </div>
+      </section>
+
+      <!-- Question 2 -->
+      <section class="question" id="question-2">
+        <h1>
+          The condition in an if / else statement is enclosed with ________.
+        </h1>
+        <div class="options q2-options">
+          <div class="q2-option">1. quotes</div>
+          <div class="q2-option">2. curly brackets</div>
+          <div class="q2-option">3. parenthesis</div>
+          <div class="q2-option">4. square brackets</div>
+        </div>
+        <div class="right-wrong">Wrong!</div>
+      </section>
+
+      <!-- Question 3 -->
+      <section class="question" id="question-3">
+        <h1>Arrays in JavaScript can be used to store ________.</h1>
+        <div class="options q3-options">
+          <div class="q3-option">1. numbers and strings</div>
+          <div class="q3-option">2. other arrays</div>
+          <div class="q3-option">3. booleans</div>
+          <div class="q3-option">4. all of the above</div>
+        </div>
+        <div class="right-wrong">Wrong!</div>
+      </section>
+
+      <!-- Question 4 -->
+      <section class="question" id="question-4">
+        <h1>
+          String values must be enclosed within ________ when being assigned to
+          variables.
+        </h1>
+        <div class="options q4-options">
+          <div class="q4-option">1. commas</div>
+          <div class="q4-option">2. curly brackets</div>
+          <div class="q4-option">3. quotes</div>
+          <div class="q4-option">4. parenthesis</div>
+        </div>
+        <div class="right-wrong">Wrong!</div>
+      </section>
+
+      <!-- Question 5 -->
+      <section class="question" id="question-5">
+        <h1>
+          A very useful tool used during development and debugging for printing
+          content to the debugger is:
+        </h1>
+        <div class="options q5-options">
+          <div class="q5-option">1. JavaScript</div>
+          <div class="q5-option">2. terminal/bash</div>
+          <div class="q5-option">3. for loops</div>
+          <div class="q5-option">4. console.log</div>
+        </div>
+        <div class="right-wrong">Wrong!</div>
+      </section>
+
+      <!-- Score Scene -->
+      <section id="score">
+        <h1>All done!</h1>
+        <p id="your-score">Your final score is 0.</p>
+        <div class="submit">
+          <p>
+            Enter initials:<input type="text" name="initials" id="initials" />
+          </p>
+          <div id="submit-btn">Submit</div>
+        </div>
+        <div class="right-wrong">Wrong!</div>
+      </section>
+
+      <!-- Recorded High Scores-->
+      <section id="high-score">
+        <h1>High scores</h1>
+        <!-- List of High Scores-->
+        <div id="score-list"></div>
+        <!-- High Score Menu Options-->
+        <div class="high-score-op">
+          <div id="go-back">Go back</div>
+          <div id="clear-scores">Clear high scores</div>
+        </div>
+      </section>
+    </main>
+
+    <script src="./assets/js/script.js"></script>
+  </body>
+</html>
